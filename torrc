@@ -8,7 +8,7 @@ ContactInfo abuse [AT] torworld.org - BTC 17iwdtpmgHdPt15twdT2sUcdeKgz9PTNMQ
 DisableDebuggerAttachment 0
 RunAsDaemon 1
 
-Log notice /var/log/tor/log
+Log notice file /var/log/tor/notice.log
 
 # /// Relays ///
 
