@@ -8,6 +8,8 @@ ContactInfo abuse [AT] torworld.org - BTC 17iwdtpmgHdPt15twdT2sUcdeKgz9PTNMQ
 DisableDebuggerAttachment 0
 RunAsDaemon 1
 
+Log notice /var/log/tor/log
+
 # /// Relays ///
 
 # Freya: 88C3708A9D71ECEC1910B63C3FAA5BF60CD7E199
