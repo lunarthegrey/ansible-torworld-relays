@@ -1,5 +1,5 @@
 ---
-- name: Update the configuration of TorWorld relays
+- name: Update the configuration of Tor World relays
   hosts: torworld-relays
   remote_user: root
 
