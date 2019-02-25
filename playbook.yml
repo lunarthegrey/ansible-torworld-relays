@@ -1,6 +1,6 @@
 ---
 - name: Update the configuration of Tor World relays
-  hosts: relay-test
+  hosts: torworld-relays
   remote_user: root
   roles:
-    - role: /home/user/git/ansible-torworld-relays
+    - role: ansible-torworld-relays
