@@ -1,0 +1,42 @@
+---
+  
+  - name: Update MyFamily
+    lineinfile:
+      dest: /etc/tor/torrc
+      regexp: "{{item.regexp}}"
+      line: "{{item.line}}"
+      state: present
+    notify: Reload tor
+
+    with_items:
+      - regexp: "^#?MyFamily"
+        line: "MyFamily {{ relay_family_fingerprints }}"
+
+  - sysctl:
+      name: net.core.default_qdisc
+      value: fq
+      sysctl_set: yes
+      state: present
+      reload: yes
+
+  - sysctl:
+      name: net.ipv4.tcp_congestion_control
+      value: bbr
+      sysctl_set: yes
+      state: present
+      reload: yes
+
+  - name: Ensure unbound is installed
+    apt: name=unbound state=present
+      
+  - name: Ensure unbound is running
+    service: name=unbound state=started enabled=yes
+      
+  - name: Copy resolv.conf over
+    template:
+      src: resolv.conf
+      dest: /etc/resolv.conf
+      backup: yes
+      owner: root
+      group: root
+      mode: 0644
