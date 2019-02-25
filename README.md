@@ -1,2 +1,2 @@
-# torworld-relays
-Ansible playbook to update the MyFamily of Tor World relays!
+# ansible-torworld-relays
+Ansible role to change the configuration of torworld.org relays
